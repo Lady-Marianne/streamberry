@@ -1,10 +1,13 @@
-import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
-import com.aluracursos.screenmatch.modelos.Pelicula;
-import com.aluracursos.screenmatch.modelos.Serie;
+import com.aluracursos.streamberry.calculos.CalculadoraDeTiempo;
+import com.aluracursos.streamberry.calculos.FiltroRecomendacion;
+import com.aluracursos.streamberry.modelos.Episodio;
+import com.aluracursos.streamberry.modelos.Pelicula;
+import com.aluracursos.streamberry.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
         Pelicula terminator = new Pelicula();
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
 
         terminator.setNombre("Terminator");
         terminator.setFechaDeLanzamiento(1984);
@@ -19,10 +22,11 @@ public class Principal {
 
         System.out.println("Total de evaluaciones: " + terminator.getTotalDeLasEvaluaciones());
         System.out.println("Calificación: " + terminator.calculaMedia());
-
+        filtroRecomendacion.filtra(terminator);
         System.out.println("\n****************************************************************");
 
         Serie dark = new Serie();
+        Episodio episodio = new Episodio();
 
         dark.setNombre("Dark");
         dark.setFechaDeLanzamiento(2017);
@@ -35,6 +39,9 @@ public class Principal {
         System.out.println("Cantidad de temporadas: " + dark.getTemporadas());
         System.out.println(("Episodios por temporada: " + dark.getEpisodiosPorTemporada()));
         System.out.println("Duración de cada capítulo (promedio): " + dark.getMinutosPorEpisodio() + " minutos.");
+
+        episodio.setNumero(1);
+        episodio.setNombre("Secretos");
 
         Pelicula matrix = new Pelicula();
         matrix.setNombre("The Matrix");
@@ -49,8 +56,6 @@ public class Principal {
         System.out.println("\n************************************************************");
         System.out.println("\nTiempo total para ver tus títulos favoritos: "
                 + calculadora.getTiempoTotal() + " minutos.");
-
-
 
     }
 

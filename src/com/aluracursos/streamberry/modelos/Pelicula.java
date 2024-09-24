@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch.modelos;
+package com.aluracursos.streamberry.modelos;
 
 public class Pelicula extends Titulo implements Clasificacion {
 

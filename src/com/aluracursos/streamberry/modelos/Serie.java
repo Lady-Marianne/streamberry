@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch.modelos;
+package com.aluracursos.streamberry.modelos;
 
 public class Serie extends Titulo {
 

@@ -1,6 +1,6 @@
-package com.aluracursos.screenmatch.calculos;
+package com.aluracursos.streamberry.calculos;
 
-import com.aluracursos.screenmatch.modelos.Titulo;
+import com.aluracursos.streamberry.modelos.Titulo;
 
 public class CalculadoraDeTiempo {
 
