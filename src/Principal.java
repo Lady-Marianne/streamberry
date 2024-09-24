@@ -42,6 +42,10 @@ public class Principal {
 
         episodio.setNumero(1);
         episodio.setNombre("Secretos");
+        episodio.setSerie(dark);
+        episodio.setTotalVisualizaciones(300);
+        System.out.println("Episodio " + episodio.getNumero() + ": " + episodio.getNombre());
+        filtroRecomendacion.filtra(episodio);
 
         Pelicula matrix = new Pelicula();
         matrix.setNombre("The Matrix");

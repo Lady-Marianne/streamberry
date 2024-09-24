@@ -50,10 +50,10 @@ public class Titulo {
         System.out.println("Fecha de lanzamiento: " + fechaDeLanzamiento);
         System.out.println("Duración: " + getDuracionEnMinutos() + " minutos");
         if (incluidoEnElPlan == true) {
-            System.out.println("Esta película está incluída en el plan.");
+            System.out.println("Este título está incluído en el plan.");
         }
         else {
-            System.out.println("Esta película no está incluída en el plan.");
+            System.out.println("Este título no está incluído en el plan.");
         }
     }
 
