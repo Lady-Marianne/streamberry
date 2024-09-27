@@ -4,8 +4,14 @@ import com.aluracursos.streamberry.modelos.Episodio;
 import com.aluracursos.streamberry.modelos.Pelicula;
 import com.aluracursos.streamberry.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
+        System.out.println("\n******************************");
+        System.out.println("******** STREAMBERRY *********");
+        System.out.println("******************************\n");
+
         Pelicula terminator = new Pelicula();
         FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
 
@@ -52,14 +58,31 @@ public class Principal {
         matrix.setFechaDeLanzamiento(1999);
         matrix.setDuracionEnMinutos(136);
 
+        var seniorAnillos1 = new Pelicula();
+        seniorAnillos1.setNombre("El Señor de los Anillos: La Comunidad del Anillo");
+        seniorAnillos1.setFechaDeLanzamiento(2001);
+        matrix.setDuracionEnMinutos(178);
+
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
         calculadora.incluye(terminator);
         calculadora.incluye(dark);
         calculadora.incluye(matrix);
+        calculadora.incluye(seniorAnillos1);
 
         System.out.println("\n************************************************************");
         System.out.println("\nTiempo total para ver tus títulos favoritos: "
                 + calculadora.getTiempoTotal() + " minutos.");
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(terminator);
+        listaDePeliculas.add(matrix);
+        listaDePeliculas.add(seniorAnillos1);
+
+        System.out.println("\nTamaño de la lista: " + listaDePeliculas.size());
+        System.out.println("La primera película es: " + listaDePeliculas.get(0).getNombre());
+        System.out.println(listaDePeliculas.toString());
+        System.out.println(listaDePeliculas.get(0));
+        System.out.println("toString de la película: " + listaDePeliculas.get(0).toString());
 
     }
 
