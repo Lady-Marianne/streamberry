@@ -10,13 +10,11 @@ public class Principal {
     public static void main(String[] args) {
         System.out.println("\n******************************");
         System.out.println("******** STREAMBERRY *********");
-        System.out.println("******************************\n");
+        System.out.println("******************************");
 
-        Pelicula terminator = new Pelicula();
+        Pelicula terminator = new Pelicula("Terminator", "1984");
         FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
 
-        terminator.setNombre("Terminator");
-        terminator.setFechaDeLanzamiento(1984);
         terminator.setDuracionEnMinutos(108);
         terminator.setIncluidoEnElPlan(false);
 
@@ -31,11 +29,8 @@ public class Principal {
         filtroRecomendacion.filtra(terminator);
         System.out.println("\n****************************************************************");
 
-        Serie dark = new Serie();
+        Serie dark = new Serie("Dark", 2017);
         Episodio episodio = new Episodio();
-
-        dark.setNombre("Dark");
-        dark.setFechaDeLanzamiento(2017);
         dark.setIncluidoEnElPlan(true);
         dark.setTemporadas(3);
         dark.setMinutosPorEpisodio(53);
@@ -53,14 +48,10 @@ public class Principal {
         System.out.println("Episodio " + episodio.getNumero() + ": " + episodio.getNombre());
         filtroRecomendacion.filtra(episodio);
 
-        Pelicula matrix = new Pelicula();
-        matrix.setNombre("The Matrix");
-        matrix.setFechaDeLanzamiento(1999);
+        Pelicula matrix = new Pelicula("The Matrix",1999);
         matrix.setDuracionEnMinutos(136);
 
-        var seniorAnillos1 = new Pelicula();
-        seniorAnillos1.setNombre("El Señor de los Anillos: La Comunidad del Anillo");
-        seniorAnillos1.setFechaDeLanzamiento(2001);
+        var seniorAnillos1 = new Pelicula("El Señor de los Anillos: La Comunidad del Anillo",2001);
         matrix.setDuracionEnMinutos(178);
 
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
