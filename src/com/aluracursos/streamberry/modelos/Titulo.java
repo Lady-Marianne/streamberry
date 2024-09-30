@@ -1,6 +1,6 @@
 package com.aluracursos.streamberry.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
 
     private String nombre;
     private int fechaDeLanzamiento;
@@ -71,4 +71,8 @@ public class Titulo {
         return sumaDeLasEvaluaciones/totalDeLasEvaluaciones;
     }
 
+    @Override
+    public int compareTo(Titulo otroTitulo) {
+        return this.getNombre().compareTo(otroTitulo.getNombre());
+    }
 }

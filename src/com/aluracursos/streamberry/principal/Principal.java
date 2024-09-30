@@ -1,3 +1,5 @@
+package com.aluracursos.streamberry.principal;
+
 import com.aluracursos.streamberry.calculos.CalculadoraDeTiempo;
 import com.aluracursos.streamberry.calculos.FiltroRecomendacion;
 import com.aluracursos.streamberry.modelos.Episodio;
@@ -12,7 +14,7 @@ public class Principal {
         System.out.println("******** STREAMBERRY *********");
         System.out.println("******************************");
 
-        Pelicula terminator = new Pelicula("Terminator", "1984");
+        var terminator = new Pelicula("Terminator", 1984);
         FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
 
         terminator.setDuracionEnMinutos(108);
@@ -29,7 +31,7 @@ public class Principal {
         filtroRecomendacion.filtra(terminator);
         System.out.println("\n****************************************************************");
 
-        Serie dark = new Serie("Dark", 2017);
+        var dark = new Serie("Dark", 2017);
         Episodio episodio = new Episodio();
         dark.setIncluidoEnElPlan(true);
         dark.setTemporadas(3);
@@ -48,7 +50,7 @@ public class Principal {
         System.out.println("Episodio " + episodio.getNumero() + ": " + episodio.getNombre());
         filtroRecomendacion.filtra(episodio);
 
-        Pelicula matrix = new Pelicula("The Matrix",1999);
+        var matrix = new Pelicula("The Matrix",1999);
         matrix.setDuracionEnMinutos(136);
 
         var seniorAnillos1 = new Pelicula("El Señor de los Anillos: La Comunidad del Anillo",2001);
