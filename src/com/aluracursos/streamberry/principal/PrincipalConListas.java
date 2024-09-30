@@ -3,8 +3,7 @@ import com.aluracursos.streamberry.modelos.Pelicula;
 import com.aluracursos.streamberry.modelos.Serie;
 import com.aluracursos.streamberry.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class PrincipalConListas {
         seniorAnillos1.evalua(10);
         var dark = new Serie("Dark", 2017);
 
-        ArrayList<Titulo> titulosVistos = new ArrayList<>();
+        List<Titulo> titulosVistos = new LinkedList<>();
         titulosVistos.add(terminator);
         titulosVistos.add(matrix);
         titulosVistos.add(seniorAnillos1);
@@ -31,7 +30,14 @@ public class PrincipalConListas {
 
         //titulosVistos.forEach(System.out::println);
 
-        ArrayList<String>listaDeArtistas = new ArrayList<>();
+        System.out.println("Lista de títulos vistos NO ordenados: " + titulosVistos);
+        Collections.sort(titulosVistos);
+        System.out.println("Lista de títulos vistos ordenados: " + titulosVistos);
+
+        titulosVistos.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        System.out.println("Títulos vistos ordenados por fecha de lanzamiento: " + titulosVistos);
+
+        List<String>listaDeArtistas = new ArrayList<>();
         listaDeArtistas.add("Bill Skarsgård");
         listaDeArtistas.add("Nicole Kidman");
         listaDeArtistas.add("Brad Pitt");
@@ -41,11 +47,6 @@ public class PrincipalConListas {
         System.out.println("Lista de artistas NO ordenada: " + listaDeArtistas);
         Collections.sort(listaDeArtistas);
         System.out.println("Lista de artistas ordenada: " + listaDeArtistas);
-
-        System.out.println("Lista de títulos vistos NO ordenados: " + titulosVistos);
-        Collections.sort(titulosVistos);
-        System.out.println("Lista de títulos vistos ordenados: " + titulosVistos);
-
 
     }
 }
