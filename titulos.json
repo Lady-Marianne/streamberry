@@ -1,0 +1,34 @@
+[
+  {
+    "Nombre": "Get Out",
+    "FechaDeLanzamiento": 2017,
+    "DuracionEnMinutos": 104,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDeLasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Us",
+    "FechaDeLanzamiento": 2019,
+    "DuracionEnMinutos": 116,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDeLasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Nope",
+    "FechaDeLanzamiento": 2022,
+    "DuracionEnMinutos": 130,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDeLasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Fall from Grace",
+    "FechaDeLanzamiento": 2007,
+    "DuracionEnMinutos": 71,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDeLasEvaluaciones": 0
+  }
+]

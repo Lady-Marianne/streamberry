@@ -1,5 +1,6 @@
 package com.aluracursos.streamberry.modelos;
 
+import com.aluracursos.streamberry.excepciones.ErrorEnConversionDeDuracionException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo>{
@@ -18,10 +19,14 @@ public class Titulo implements Comparable<Titulo>{
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
-    public Titulo(TituloOmdb miTituloOmdb) {
+    public Titulo(@org.jetbrains.annotations.NotNull TituloOmdb miTituloOmdb) {
         this.nombre = miTituloOmdb.title();
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
-        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,3));
+        if(miTituloOmdb.runtime().contains("N/A")) {
+            throw new ErrorEnConversionDeDuracionException("Error en la conversión de duración: N/A");
+        }
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,3)
+                .replace(" ",""));
     }
 
     public String getNombre() {
@@ -88,7 +93,7 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", Fecha de lanzamiento: " + fechaDeLanzamiento
-                + ", Duración: " + duracionEnMinutos + " minutos.";
+        return "(Nombre: " + nombre + ", Fecha de lanzamiento: " + fechaDeLanzamiento
+                + ", Duración: " + duracionEnMinutos + " minutos.)";
     }
 }
